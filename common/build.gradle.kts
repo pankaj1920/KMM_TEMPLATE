@@ -18,7 +18,11 @@ kotlin {
             kotlinOptions.jvmTarget = "11"
         }
     }
-    
+
+    ios()
+    iosSimulatorArm64()
+
+
     listOf(
         iosX64(),
         iosArm64(),

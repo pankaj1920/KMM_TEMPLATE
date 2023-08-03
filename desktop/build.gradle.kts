@@ -1,38 +1,35 @@
 import org.jetbrains.compose.compose
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("multiplatform")
-    id("org.jetbrains.compose") version "1.2.2"
+    id("org.jetbrains.compose") version "1.4.3"
 }
 
-group = "com.example.kmm"
-version = "1.0"
-
+group = "com.domain.project"
+version = "1.0.0"
 
 kotlin {
     jvm {
-        compilations.all {
-            kotlinOptions.jvmTarget = "11"
-        }
         withJava()
+        compilations.all {
+            kotlinOptions.jvmTarget = "17"
+        }
     }
     sourceSets {
         val jvmMain by getting {
+            kotlin.srcDirs("src/jvmMain/kotlin")
             dependencies {
-                implementation(project(":common"))
+                implementation(compose.desktop.currentOs)
                 api(compose.runtime)
                 api(compose.foundation)
                 api(compose.material)
                 api(compose.ui)
                 api(compose.materialIconsExtended)
 
-
-                implementation(compose.desktop.currentOs)
+                implementation(project(":common"))
             }
         }
-        val jvmTest by getting
     }
 }
 
@@ -41,8 +38,10 @@ compose.desktop {
         mainClass = "MainKt"
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "KMM"
-            packageVersion = "1.0.0"
+            packageName = "MyProject"
+            macOS {
+                bundleID = "com.domain.project"
+            }
         }
     }
 }

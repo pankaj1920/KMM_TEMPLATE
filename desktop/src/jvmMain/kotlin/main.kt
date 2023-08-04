@@ -5,6 +5,7 @@ import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
 import androidx.compose.material.*
+import com.example.kmm.Application
 
 fun main() {
     application {
@@ -15,9 +16,7 @@ fun main() {
             state = windowState,
             title = "My Project"
         ) {
-            Surface(modifier = Modifier.fillMaxSize()) {
-                Text(text = "Welcome Desktop Project")
-            }
+            Application()
         }
     }
 }

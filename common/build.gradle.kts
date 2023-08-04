@@ -1,8 +1,9 @@
 plugins {
     kotlin("multiplatform")
+    id("org.jetbrains.compose")
     id("com.android.library")
 }
-
+group = "com.example"
 kotlin {
 
     android {
@@ -37,6 +38,7 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 //put your multiplatform dependencies here
+
             }
         }
         val commonTest by getting {

@@ -5,3 +5,4 @@ class DesktopPlatform : Platform {
 }
 
 actual fun getPlatform(): Platform = DesktopPlatform()
+

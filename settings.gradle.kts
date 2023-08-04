@@ -13,7 +13,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "KMM"
+rootProject.name = "KMP"
 include(":androidApp")
-include(":common")
+include(":shared")
 include(":desktop")

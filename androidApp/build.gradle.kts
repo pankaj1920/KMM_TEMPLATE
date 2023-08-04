@@ -4,10 +4,10 @@ plugins {
 }
 
 android {
-    namespace = "com.example.kmm.android"
+    namespace = "com.example.kmp.android"
     compileSdk = 33
     defaultConfig {
-        applicationId = "com.example.kmm.android"
+        applicationId = "com.example.kmp.android"
         minSdk = 24
         targetSdk = 33
         versionCode = 1
@@ -39,7 +39,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":common"))
+    implementation(project(":shared"))
     implementation("androidx.compose.ui:ui:1.4.3")
     implementation("androidx.compose.ui:ui-tooling:1.4.3")
     implementation("androidx.compose.ui:ui-tooling-preview:1.4.3")
